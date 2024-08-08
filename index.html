@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <link rel="stylesheet" href="/src/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lens panel</title>
+</head>
+<body>
+<div id="app">
+    <button id="pdf">Download PDF</button>
+    <button id="csv">Download CSV</button>
+    <label>
+       <select id="device_ids">
+
+       </select>
+    </label>
+    <label>
+        Start Date:
+        <input type="datetime-local" id="start_date" name="start_date">
+    </label>
+    <label>
+        End Date:
+        <input type="datetime-local" id="end_date" name="end_date">
+    </label>
+    <label>
+        Threshold:
+        <input type="number" id="threshold" name="threshold" value="25">
+    </label>
+    <canvas id="timeline"></canvas>
+    <div id="detection-stats">
+        <p>Number of detections: <span id="detection-count">0</span></p>
+        <p>Number of faces front: <span id="faces-front-count">0</span></p>
+        <p>Number of faces side: <span id="faces-side-count">0</span></p>
+        <p>Number of persons: <span id="person-count">0</span></p>
+        <p>Faces to person ratio: <span id="person-faces-ratio">0</span></p>
+    </div>
+    <br>
+    <canvas id="heatmap"></canvas>
+</div>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
